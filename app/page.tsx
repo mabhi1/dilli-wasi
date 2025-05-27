@@ -55,7 +55,7 @@ export default function Home() {
             fill
             sizes="(max-width: 1024px) 100vw, 45vw"
             quality={90}
-            className="animate-float object-contain object-right drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+            className="animate-float object-contain object-right"
             priority
           />
         </div>
