@@ -1,10 +1,10 @@
 import { Button } from '@/components/ui/button';
-import { Beer } from 'lucide-react';
+import { Beer, NotebookPen, SquareMenu } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-[calc(100vh-5rem)] items-center justify-between px-4 md:px-8 lg:px-16 xl:px-24">
+    <div className="relative flex min-h-[calc(100vh-5rem)] flex-col-reverse items-center justify-between px-4 md:flex-row md:px-8 lg:px-16 xl:px-24">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -18,7 +18,7 @@ export default function Home() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-2xl space-y-8 py-12">
+      <div className="relative z-10 max-w-full space-y-8 px-4 py-12 md:max-w-1/2">
         <h1 className="text-primary flex items-center gap-3 text-lg font-semibold tracking-wide">
           <span>Welcome</span> <Beer className="h-5 w-5" />
         </h1>
@@ -36,16 +36,18 @@ export default function Home() {
             of taste and quality.
           </p>
         </div>
-        <div className="flex flex-wrap gap-4 pt-4">
+        <div className="flex flex-wrap justify-center gap-4 pt-4 md:justify-start">
           <Button size="lg" className="bg-primary hover:bg-primary/90 px-8 text-base">
+            <SquareMenu />
             Our Menu
           </Button>
-          <Button size="lg" variant="secondary" className="px-8 text-base">
+          <Button size="lg" variant="outline" className="px-8 text-base">
+            <NotebookPen />
             Make a reservation
           </Button>
         </div>
       </div>
-      <div className="relative z-10 hidden h-[80vh] w-[45%] lg:block">
+      <div className="relative z-10 mt-10 aspect-square w-[90vw] md:h-[80vh] md:w-[45%]">
         <div className="relative h-full w-full transition-transform duration-300 hover:scale-[1.02]">
           <Image
             src="/momo.png"
