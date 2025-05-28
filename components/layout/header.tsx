@@ -9,6 +9,7 @@ import {
   SheetDescription,
   SheetFooter,
   SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Separator } from '@/components/ui/separator';
@@ -35,7 +36,7 @@ interface HeaderProps {
 
 function Header({ mobileMenu, mainMenu, rootPath, logo, title, mobileFooter }: HeaderProps) {
   return (
-    <header className="bg-primary w-full border-b">
+    <header className="bg-primary/95 sticky top-0 z-50 w-full shadow-2xl">
       <div className="mx-auto hidden max-w-[100rem] items-center justify-between gap-8 px-4 py-2 md:flex md:px-10">
         <Link href={rootPath} className="flex items-center gap-2">
           <Image src={logo} alt={title} width={464} height={132} priority className="h-14 w-auto" />
@@ -67,6 +68,7 @@ function Header({ mobileMenu, mainMenu, rootPath, logo, title, mobileFooter }: H
           </SheetTrigger>
           <SheetContent className="bg-primary border-primary flex flex-col gap-5 p-0" side="right">
             <SheetHeader className="bg-primary flex-row items-center gap-3 space-y-0">
+              <SheetTitle className="sr-only">Dilliwasi Mobile Menu</SheetTitle>
               <Link href={rootPath} className="flex items-center gap-2">
                 <Image
                   src={logo}
